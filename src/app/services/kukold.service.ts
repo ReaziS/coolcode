@@ -11,6 +11,7 @@ export class KukoldService {
   private CURRENTSQUAD = '/api/squad';
   private ADDSQUAD = '/api/squad';
   private CHANGEKUKOLD = '/api/squad';
+  private CHECKABILITY =  '/api/check';
   constructor(private http: HttpClient) {
   }
   getKukolds(): Observable<Kukold[]> {
@@ -19,7 +20,9 @@ export class KukoldService {
   getSquads(): Observable<any[]> {
     return this.http.get<any[]>(`${this.SQUADSURL}`);
   }
-
+  checkAbility(): Observable<boolean> {
+    return this.http.get<boolean>(this.CHECKABILITY);
+  }
   getSquad(id: string): Observable<any[]> {
     console.log(id);
     return this.http.get<any[]>(`${this.CURRENTSQUAD}/${id}`);

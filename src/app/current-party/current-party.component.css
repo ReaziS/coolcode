@@ -90,6 +90,8 @@ section {
 .vboiwrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -119,6 +121,10 @@ section {
 }
 #close-CSS:active {
     border: 2px solid white;
+}
+
+#chosenKukold {
+    display: none;
 }
 
 

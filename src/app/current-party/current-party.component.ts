@@ -35,14 +35,25 @@ export class CurrentPartyComponent implements OnInit {
     });
   }
   changeKukold(): any {
-    console.log(this.kukolds);
-    this.kukolds[0].counter++;
-    this.currentKukold = this.kukolds[0];
-    this.kukolds.shift();
-    this.kukolds.push(this.currentKukold);
-    this.kukoldService.changeKukold(this.currentSquad._id, this.kukolds).subscribe(newKukoldList => {
-      this.kukolds = newKukoldList;
-      this.cdr.markForCheck();
+    this.kukoldService.checkAbility().subscribe(ability => {
+      console.log(ability);
+      if (ability === true) {
+        console.log(this.kukolds);
+        this.kukolds[0].counter++;
+        this.currentKukold = this.kukolds[0];
+        this.kukolds.shift();
+        this.kukolds.push(this.currentKukold);
+        this.kukoldService.changeKukold(this.currentSquad._id, this.kukolds).subscribe(newKukoldList => {
+          this.kukolds = newKukoldList;
+          this.cdr.markForCheck();
+        });
+      } else {
+        this.getSquad();
+        document.getElementById('chosenKukold').style.display = 'flex';
+        setTimeout(() => {
+          document.getElementById('chosenKukold').style.display = 'none';
+        }, 3000);
+      }
     });
   }
 }

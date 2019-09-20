@@ -141,17 +141,30 @@ app.post('/squad', (req, res) => {
     res.send('200');
   });
 });
+let timer = true;
+app.get('/check', (req, res) => {
+    if (timer == true) {
+      res.send(true);
+    } else res.send(false);
+})
 app.put('/squad/:id' , (req, res) =>{
-  db.collection('squads').updateOne(
-    {_id: objectID(req.params.id)},
-    { $set: { list: req.body
-    }}, (err, result) => { 
-      if (err) {
-        console.log(err);
-        return res.sendStatus(500);
-      }
-      res.send(req.body);
-    });
+  if (timer == true) {
+    db.collection('squads').updateOne(
+      {_id: objectID(req.params.id)},
+      { $set: { list: req.body
+      }}, (err, result) => { 
+        if (err) {
+          console.log(err);
+          return res.sendStatus(500);
+        }
+        timer = false;
+        console.log(timer);
+        setTimeout(t => {
+          timer = true;
+        }, 10000);
+        res.send(req.body);
+      });
+  } else res.send('Not_time');
 });
 /*
 app.delete('/bikes/:id' , (req, res) =>{
