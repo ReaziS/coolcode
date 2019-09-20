@@ -1,0 +1,27 @@
+
+<div class="container">
+  <form [formGroup]="form">
+        <div class="group">      
+            <input type="text" formControlName="partyName" required>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Названиве вашей куколд пати</label>
+        </div>
+    <div class="selected-ingredient" formArrayName="list"
+      *ngFor="let item of form.get('list').controls; let i = index;">
+      <div class="select" [formGroupName]="i">
+        <select class="select-text" formControlName="name" placeholder="Item name">
+          <option *ngFor="let item of ingredients" [value]="item">
+            {{item}}
+          </option>
+        </select>
+        <span class="select-highlight"></span>
+        <span class="select-bar"></span>
+        <label class="select-label">Выберите куколда</label>
+      </div>
+    </div>
+  <button class="btn btn-light add-item-ico" (click)="addItem()"><img src="http://image.flaticon.com/icons/png/128/150/150507.png" alt=""></button>
+  </form>
+  <button class="btn btn-success" (click)="addSquad()">Добавить</button>
+  <button class="btn btn-danger" (click)="back()">Я куколд</button>
+</div>

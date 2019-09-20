@@ -1,0 +1,124 @@
+
+section {
+    font-family: cursive;
+
+    font-size:  22px;
+}
+
+.create-squad {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#create-squad-button {
+    border: 1px solid white;
+    background-image: url( 'https://sun9-72.userapi.com/c854024/v854024676/fd610/iWyLnaKp2Qc.jpg' );
+    background-repeat: no-repeat;
+    height: 55px;  
+    width: 55px;
+    transition: 0.2s;
+}
+#create-squad-button:hover {
+    cursor: pointer;
+    border: 0px solid white;
+}
+#create-squad-button:active {
+    border: 2px solid white;
+}
+.squds-list-wrapper {
+    position: absolute;
+    top: 90px;
+    left: 110px;
+}
+.current-kukold {
+    margin-bottom: 10px;
+}
+.current-kukold_position {
+    display: flex;
+    justify-content: flex-start;
+}
+.group-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    width: 72px;
+    border: 2px solid #1f2525;
+    background-color: #0d1217;
+}
+.group-link-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    width: 220px;
+    border: 2px solid #1f2525;
+    background-color: #0d1217;
+}
+.group-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cdcdcd;
+    height: 82%;
+    width: 95%;
+    
+    background-color: #1f2525;
+}
+
+
+
+
+.current-kukold_name {
+    font-size: 50px;
+}
+.kukold__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+    max-width: 600px;
+
+}
+.kukold__wrapper ul {
+    max-width: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    list-style-type: none;
+}
+.vboiwrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+.vboisuka {
+    border: 3px solid black;
+    width: 149px;
+    height: 40px;
+    transition: 0.2s;
+}
+.vboisuka:hover {
+    border: 1px solid black;
+    transition: 0.2s;
+}
+
+#close-CSS {
+    border: 1px solid white;
+    background-image: url( 'https://sun9-54.userapi.com/c856028/v856028146/f9ff4/fAJfWvJs8C8.jpg' );
+    background-size: 146px 44px ;
+    height: 44px;  
+    width: 146px;
+    transition: 0.2s;
+}
+
+#close-CSS:hover {
+    cursor: pointer;
+    border: 0px solid white;
+}
+#close-CSS:active {
+    border: 2px solid white;
+}
+
+

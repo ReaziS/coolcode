@@ -1,0 +1,34 @@
+
+<div class="squds-list-wrapper">
+        <div class="create-squad">
+                <button id="create-squad-button" routerLink="/newKukold"></button>
+        </div>
+        <div *ngIf="squads">
+            <div class="current-kukold" *ngFor="let squad of squads">
+                <a routerLink="/squad/{{squad._id}}" (click)="ngOnInit()">
+                <div class="current-kukold_position">
+                    <div class="group-logo"><img src="https://sun9-42.userapi.com/c856124/v856124676/fc8ef/9a-nCMMpM7I.jpg" alt=""></div>
+                    <div class="group-link-wrapper"><div class="group-container">{{squad.partyName}}</div></div>
+                </div>
+            </a>
+            </div>
+        </div>
+          
+    </div>
+    <div class="kukold__wrapper">
+        <div>
+            <div class="current-kukold" *ngIf="kukolds">
+                <div>ТЕКУЩИЙ КУКОЛД <span class="current-kukold_name"> {{kukolds[0].name}}</span></div>
+                <div></div>
+            </div>
+            <ul *ngFor="let kukold of kukolds">
+                <li >
+                    Куколд {{kukold.name}}: был {{kukold.counter}} раз куколдом.
+                </li>
+            </ul>
+        </div>
+      
+    </div>
+    <div class="vboiwrapper">
+            <button id="close-CSS" (click)="changeKukold()"></button>
+    </div>

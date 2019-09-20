@@ -1,0 +1,16 @@
+<section>
+<div class="squds-list-wrapper">
+        <div *ngIf="squads">
+                <div class="current-kukold" *ngFor="let squad of squads">
+                    <a routerLink="/squad/{{squad._id}}" (click)="ngOnInit()">
+                    <div class="current-kukold_position">
+                        <div class="group-logo"><img src="https://sun9-42.userapi.com/c856124/v856124676/fc8ef/9a-nCMMpM7I.jpg" alt=""></div>
+                        <div class="group-link-wrapper"><div class="group-container">{{squad.partyName}}</div></div>
+                    </div>
+                </a>
+                </div>
+            </div>
+          
+    </div>
+
+</section>
