@@ -15,6 +15,7 @@ export class CurrentPartyComponent implements OnInit {
   currentSquad: any;
   currentKukold: Kukold;
   public squads;
+  public dis = true;
   ngOnInit() {
     this.getSquads();
     this.getSquad();
@@ -35,6 +36,12 @@ export class CurrentPartyComponent implements OnInit {
     });
   }
   changeKukold(): any {
+    this.dis = false;
+    document.getElementById('dis').style.opacity = '0.2';
+    setTimeout(() => {
+      this.dis = true;
+      document.getElementById('dis').style.opacity = '1';
+    }, 10000);
     this.kukoldService.checkAbility().subscribe(ability => {
       console.log(ability);
       if (ability === true) {
